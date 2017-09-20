@@ -1,0 +1,22 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body class="main page">
+  <script>
+    var classList = document.body.classList;
+
+    classList.remove('page'); // видаляє класс
+    classList.add('post'); // додає класс
+
+    for (var i = 0; i < classList.length; i++) { 
+      console.log( classList[i] ); // виводить по черзщі класи елемента body
+    }
+    console.log( classList.contains('post') ); // перевіряє наявність класу
+    console.log( document.body.className ); // виводить значення атрибута class
+  </script>
+</body>
+</html>

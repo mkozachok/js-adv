@@ -1,0 +1,32 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <p>...</p>
+  <ul>
+    <li>1.1</li>
+  </ul>
+
+  <script>
+    var p = document.body.children[0];
+    var ul = document.body.children[1];
+    var li = ul.children[0];
+
+    // 1. <ul> знаходится після <p>
+    console.log( ul.compareDocumentPosition(p) ); // 2 = 10
+
+    // 2. <p> знаходится до <ul>
+    console.log( p.compareDocumentPosition(ul) ); // 4 = 100
+
+    // 3. <ul> батько <li>
+    console.log( ul.compareDocumentPosition(li) ); // 20 = 10100
+
+    // 4. <ul> нащадок <body>
+    console.log( ul.compareDocumentPosition(document.body) ); // 10 = 1010
+  </script>
+</body>
+</html>

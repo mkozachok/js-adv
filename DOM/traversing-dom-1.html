@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Сторінка користовача</title>
+</head>
+<body>
+  <ul>
+    <li>Михайло
+    <li>Якась інформація
+  </ul>
+  <!-- Додати ще один пункт -->
+  <script>
+    // dom - обєктна модель, яка використоувуєтся для html документів
+    // документ являє собою ієрархію, дерево.
+    // кожен htnl тег є вузлом з типом "елемент", вложені в нього теги - є дочірніми
+    // текст являє собою вузол типу "текст" і не може мати дочірніх елементів
+    // коментарі, пробіли, перехід на нову стрічку - теж вузли
+
+    for (var i = 0; i < document.body.childNodes.length; i++) {
+      //console.log(document.body.childNodes[i]);
+    }
+
+    for (var i = 0; i < document.childNodes.length; i++) {
+      //console.log(document.childNodes[i]);
+    }
+    
+    //console.log(document.body.firstChild); // (document.body.childNodes[0])
+    //console.log(document.body.lastChild);
+
+     //console.log(document.body.firstChild.previousSibling);
+     //console.log(document.body.nextSibling);
+    console.log(document.body.previousSibling);
+    //console.log(document.body.firstChild.nextSibling.childNodes);
+
+    // знайдыть перший li
+
+  </script>
+  <p>Кінець</p>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+<a id="a" href="#"></a>
+<script>
+  //a.href = '/';
+  alert( 'атрибут:' + a.getAttribute('href') ); // '/'
+  alert( 'свойство:' + a.href );  // url
+</script>
+
+<input id="input" type="checkbox" checked>
+
+<script>
+  //робота як з атрибутом
+  alert( input.getAttribute('checked') );
+  input.removeAttribute('checked');
+
+  //робота як з властивістю
+  alert( input.checked ); // false 
+  input.checked = true; // 
+</script>
+
+<input id="input" type="text" value="markup">
+<script>
+    input.value = 'new'; // змінили властивість
+    alert( input.getAttribute('value') ); // 'markup', не змінився
+</script>
+  
+</body>
+</html>

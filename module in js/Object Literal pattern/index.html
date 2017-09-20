@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <tittle>Modules</tittle>
+    <script src="script-1.js"></script>
+    <script src="script-2.js"></script>
+  </head>
+  <body>
+    <script>
+      console.log(myModuleOne.myProperty);
+      console.log(myModuleTwo.myProperty);
+      myModuleOne.showAuthor();
+      myModuleOne.setAuthor("John");
+      myModuleOne.showAuthor();
+      // The prblem is that we can do this
+      // We need private property to fix this
+      myModuleOne.myConfig = "blah blah blah";
+      myModuleOne.showAuthor();
+    </script>
+  </body>
+</html>

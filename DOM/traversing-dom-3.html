@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Табличка</title>
+</head>
+
+<body>
+  <table>
+    <tr>
+      <td>один</td>
+      <td>два</td>
+    </tr>
+    <tr>
+      <td>три</td>
+      <td>чотири</td>
+    </tr>
+  </table>
+
+  <script>
+    var table = document.body.children[0];
+    console.log(table.rows[0].cells[0].innerHTML); // "один"
+  </script>
+</body>
+
+</html>
