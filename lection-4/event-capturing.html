@@ -1,0 +1,51 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Event Bubbling</title>
+  <style>
+    .wrapper {
+      position:relative;
+      background: blue;
+      width:600px;
+      height:600px;
+    }
+    .content {
+      position: absolute;
+      background: yellow;
+      width:400px;
+      height:400px;
+      top: 100px;
+      left: 100px;
+    }
+    p {
+      background: red;
+      color: #fff;
+      margin-top: 200px; 
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="content">
+      <p class="text">Clicking on this text triggering event on wrapper.</p>
+    </div>
+  </div>
+
+  <script>
+    var elems = document.querySelectorAll('.wrapper, .content , p');
+
+    for (var i = 0; i < elems.length; i++) {
+      elems[i].addEventListener("click", highlightThis, true);
+      //elems[i].addEventListener("click", highlightThis, false);
+    }
+
+    function highlightThis() {
+      this.style.backgroundColor = 'yellow';
+      alert(this.className);
+      this.style.backgroundColor = '';
+    }
+  </script>
+
+</body>
+</html>

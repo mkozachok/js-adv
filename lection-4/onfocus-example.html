@@ -1,0 +1,25 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>onfocus</title>
+</head>
+<body>
+  <input type="text" value="" style="width: 600px;">
+  <button>Focus</button>
+  <script>
+    var input = document.getElementsByTagName("input")[0];
+    var button = document.getElementsByTagName("button")[0];
+    button.onclick = function() {
+      input.value += "click start ";
+      input.focus();
+      // setTimeout(function() {
+      //   input.focus();
+      // }, 0);
+      input.value += "-- click end";
+    }    
+    input.onfocus = function() {
+      input.value += " | focus";
+    }
+  </script>
+</body>
+</html>

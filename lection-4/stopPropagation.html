@@ -1,0 +1,44 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Event Bubbling</title>
+  <style>
+    .wrapper {
+      position:relative;
+      background: blue;
+      width:600px;
+      height:600px;
+    }
+    .content {
+      position: absolute;
+      background: yellow;
+      width:400px;
+      height:400px;
+      top: 100px;
+      left: 100px;
+    }
+    p {
+      background: red;
+      color: #fff;
+      margin-top: 200px; 
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper" onclick="alert('blue div')">  <!-- Сюди не дійде-->
+    <div class="content" onclick="event.stopPropagation(); alert('yellow div');"> 
+      <p onclick="alert('paragraph')">Clicking on this text triggering event on wrapper.</p>
+    </div>
+  </div>
+
+  <a href="go/some/where" onclick="showAlert(event)" >Click me</a>
+  <script>
+    function showAlert(event) {
+      alert('Link does not work!');
+      event.preventDefault();
+    }
+  </script>
+
+</body>
+</html>
