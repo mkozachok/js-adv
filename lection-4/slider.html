@@ -1,0 +1,81 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Slider</title>
+  <style>    
+    .slider {
+      width: 400px;
+      height: 200px;
+      overflow: hidden;
+      position: relative;
+    }
+    .wrapper {
+      position: relative;
+      width: 9999px;
+    }
+    .slide {
+      color :#fff;
+      font-size: 32px;
+      padding: 40px;
+      position: relative;
+      float: left;
+      width: 400px;
+      height: 200px;
+    }
+    .red {
+      background: red;
+    }
+    .blue {
+      background: blue;
+    }
+  </style>
+</head>
+<body>
+  <div class="slider">
+    <div class="wrapper">
+      <div class="slide red">1</div>
+      <div class="slide blue">2</div>
+      <div class="slide red">3</div>
+      <div class="slide blue">4</div>
+    </div>
+  </div>
+  <button class="left" onclick="goLeft()">Left</button>
+  <button class="right" onclick="goRight()">Right</button>
+  <script>
+    var slider = document.querySelector('.slider');
+    console.log(slider.getBoundingClientRect());
+
+    var counter = 1;
+
+    function goRight() {
+      var wrapper = document.querySelector('.slider .wrapper'),
+          slides = document.querySelectorAll('.slider .slide'),
+          wrapperPosition = wrapper.getBoundingClientRect(),
+          slidePosition = slides[0].getBoundingClientRect();
+      if (slides.length < counter + 1) {
+        return;
+      }
+      wrapper.style.left = (wrapperPosition.left - slidePosition.width - slider.offsetLeft) + "px";
+      counter++;
+    }
+    function goLeft() {
+      if (counter <= 1) {
+        return;
+      }
+      var wrapper = document.querySelector('.slider .wrapper'),
+          slides = document.querySelectorAll('.slider .slide'),
+          wrapperPosition = wrapper.getBoundingClientRect(),
+          slidePosition = slides[0].getBoundingClientRect();
+      wrapper.style.left = (wrapperPosition.left + slidePosition.width - slider.offsetLeft) + "px";
+      counter--;
+    }
+
+    function smooth(from, to) {
+      while (from !== to) {
+        wrapper.style.left = (wrapperPosition.left - 20 - slider.offsetLeft) + "px";
+        from += 20;
+      }
+    }
+  </script>
+</body>
+</html>
