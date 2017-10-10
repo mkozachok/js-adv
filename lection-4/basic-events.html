@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Basic events</title>
+    <style>
+        div {
+            background: yellow;
+            width: 500px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <p id="notify"></p>
+    <div 
+        onclick="console.log('click event')"
+        onmousemove="console.log('mouse moving event')"
+        oncontextmenu="console.log('right button click event')"
+        onmousedown="console.log('mouse down event')"
+        onmouseup="console.log('mouse up event')">
+    </div>
+    <script>
+        function showEvent(e) {
+            console.log(e);
+        }
+    </script>
+</body>
+</html>

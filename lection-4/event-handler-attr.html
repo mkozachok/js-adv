@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Призначення функції обробки за допомогою хтмл атрибута -->
+    <button onclick="clickFirstHandler()">Click me!</button>
+    <script>
+        function clickFirstHandler() {
+            alert('First button is clicked!');
+        } 
+    </script>
+
+    <!-- Призначення функції обробки за властивості DOM-елемента -->
+    <button class="my-button">Click me!</button>
+    <script>
+        var button = document.getElementsByClassName("my-button")[0];
+
+        function clickSecondHandler() {
+            alert('Second button is clicked!');
+        } 
+
+        button.onclick = clickSecondHandler;
+        // button.onclick = function () {
+        //     alert('Clicked!');
+        // }
+
+        //Не можна призначити більше однієї функції обробки, за допомогою цих методів.
+        //document.getElementsByTagName("button")[0].onclick = clickSecondHandler;
+
+        //Щоб удалити функцію обробки потрібно
+        //document.getElementsByTagName("button")[0].onclick = null;
+
+
+    </script>
+
+    <p onclick="alert(this.innerHTML)">You can get element property and method using this.</p>
+    
+</body>
+</html>
+
+

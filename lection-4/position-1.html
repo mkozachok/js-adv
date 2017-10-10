@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Position</title>
+    <style>
+        .field {
+            border: 1px solid #000;
+            width: 500px;
+            height: 500px;
+        }
+        .red-block {
+            position: relative;
+            background: red;
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="field" onclick="showPosition(event)">
+        <div class="red-block"></div>
+    </div>
+    <p></p>
+    <script>
+        function showPosition(event) {
+            var field = document.querySelector('.field');
+            var p = document.querySelector('p');
+            var x = event.clientX;
+            var y = event.clientY;
+
+            p.innerHTML = "Mouse position: x:" + x + ", y:" + y;  
+
+            var redBlock = document.querySelector('.red-block');
+            redBlock.style.left = x + "px";
+            redBlock.style.top = y + "px";
+        }
+    </script>
+</body>
+</html>

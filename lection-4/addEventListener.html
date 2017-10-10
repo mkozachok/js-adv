@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>addEventListener</title>
+</head>
+<body>
+    <button class="my-button">Click me!</button>
+    <button class="remove" onclick="removeSayBy()">Do not say bay</button>
+    <script>
+        var button = document.getElementsByClassName("my-button")[0];
+
+        button.addEventListener("click", sayHello);
+        button.addEventListener("click", sayBay);
+        
+        function sayHello() {
+            alert("Hello!");
+        }
+
+        function sayBay() {
+            alert("Bay!");
+        }
+
+        function removeSayBy() {
+            button.removeEventListener("click", sayBay);
+        }
+
+        
+        // button.addEventListener("click", function() {alert("Blah")});
+        // button.removeEventListener("click", function() {alert("Blah")}); - ось це не спрацює
+
+    </script>
+</body>
+</html>
