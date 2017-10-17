@@ -1,0 +1,61 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Ajax</title>
+</head>
+<body>
+  <script>
+    // https://openweathermap.org/api
+    // api_key = 1cbb9d3c2d3d13f34be51c51afe4b6cb
+    // api.openweathermap.org/data/2.5/weather?q=London
+
+    var xhr = new XMLHttpRequest();
+
+    xhr.open('GET', 'http://api.openweathermap.org/data/2.5/weather?appid=1cbb9d3c2d3d13f34be51c51afe4b6cb&q=Lviv,ua', false);// sync
+    xhr.send();
+    if (xhr.status != 200) {
+      alert( xhr.status + ': ' + xhr.statusText );
+    } else {
+      alert( xhr.responseText );
+    }
+
+    //Async
+    // xhr.open('GET', 'http://api.openweathermap.org/data/2.5/weather?appid=1cbb9d3c2d3d13f34be51c51afe4b6cb&q=Lviv,ua', true);
+    // xhr.send();
+    // xhr.onreadystatechange = function() {
+    //   if (xhr.readyState != 4) return;
+    //   if (xhr.status != 200) {
+    //     alert( xhr.status + ': ' + xhr.statusText );
+    //   } else {
+    //     alert( xhr.responseText );
+    //   }
+    // }
+
+    // var xhr = new XMLHttpRequest();
+
+    // var body = 'name=' + encodeURIComponent(name) +
+    //   '&surname=' + encodeURIComponent(surname);
+
+    // xhr.open("POST", '/submit', true)
+    // xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+
+    // xhr.onreadystatechange = ...;
+
+    // xhr.send(body);
+
+    'use strict';
+
+    // fetch('http://api.openweathermap.org/data/2.5/weather?appid=1cbb9d3c2d3d13f34be51c51afe4b6cb&q=Lviv,ua')
+    //   .then(function(response) {
+    //     alert(response.headers.get('Content-Type')); // application/json; charset=utf-8
+    //     alert(response.status); // 200
+
+    //     return response.json();
+    //   })
+    //   .then(function(date) {
+    //     alert(date); // iliakan
+    //   })
+    //   .catch( alert );
+  </script>
+</body>
+</html>
