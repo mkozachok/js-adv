@@ -9,9 +9,8 @@
     // api_key = 1cbb9d3c2d3d13f34be51c51afe4b6cb
     // api.openweathermap.org/data/2.5/weather?q=London
 
-    var xhr = new XMLHttpRequest();
-
-    xhr.open('GET', 'http://api.openweathermap.org/data/2.5/weather?appid=1cbb9d3c2d3d13f34be51c51afe4b6cb&q=Lviv,ua', false);// sync
+    var xhr = new XMLHttpRequest();    
+    xhr.open('GET', 'http://localhost:3333/api/products', false);// sync
     xhr.send();
     if (xhr.status != 200) {
       alert( xhr.status + ': ' + xhr.statusText );

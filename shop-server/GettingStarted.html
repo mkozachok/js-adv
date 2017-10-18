@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)https://localhost:3333/ -->
+<html class="gr__reduxblog_herokuapp_com"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>GettingStarted</title>
+  <link rel="stylesheet" media="screen" href="./GettingStarted_files/bootstrap.min.css">
+  <meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="ydMS6215gHUxzelGI0fngShHRE16eWfncgZgSsxKX1nEqLT9vfAaeDFmzHRPRDoFxX2WOqcTpgpjzYmY+eWi+g==">
+<style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -100px !important;
+    width: 200px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+</style></head>
+<body data-gr-c-s-loaded="true">
+
+
+<div class="container">
+  <h3>Store API Reference</h3>
+
+  <p>ALL requests require a key parameter, eg `localhost:3333/api/products?key=123`</p>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Endpoint</th>
+        <th>Method</th>
+        <th>Example</th>
+        <th>Sample Response</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><i>/api/products</i></td>
+        <td>GET</td>
+        <td>http://localhost:3333/api/products</td>
+        <td>
+<pre>[
+  { 
+    "id": "1",
+    "title": "iPhone X",
+    "description": "Some text about iphone etc",
+    "price": "1200",
+    "image_src": "/images/iphone-x.png"
+  },
+  { 
+    "id": "2",
+    "title": "iPhone 8",
+    "description": "Some text about iphone blah",
+    "price": "800",
+    "image_src": "/images/iphone-8.png"
+  }
+]
+</pre>
+        </td>
+        <td>
+          Дістає всі збережені продукти.
+        </td>
+      </tr>
+      <tr>
+        <td><i>/api/products</i></td>
+        <td>POST</td>
+        <td>http://localhost:3333/api/products</td>
+        <td>
+<pre>  {
+    "id": "1",
+    "title": "iPhone X",
+    "description": "Some text about iphone etc",
+    "price": "1200",
+    "image_src": "/images/iphone-x.png"
+  }
+</pre>
+        </td>
+        <td>Зберігає новий продукт. Повертає збережений обєкт з id.</td>
+      </tr>
+      <tr>
+        <td><i>/api/products/:id</i></td>
+        <td>GET</td>
+        <td>http://localhost:3333/api/products/5</td>
+        <td>
+<pre>  { 
+    "id": "1",
+    "title": "iPhone X",
+    "description": "Some text about iphone etc",
+    "price": "1200",
+    "image_src": "/images/iphone-x.png"
+  }
+</pre>
+        </td>
+        <td>Дістає один запис за індифікатором.</td>
+      </tr>
+      <tr>
+        <td><i>/api/products/:id</i></td>
+        <td>DELETE</td>
+        <td>http://localhost:3333/api/products/5</td>
+        <td>
+<pre>  {
+    "status": "done"
+  }
+</pre>
+        </td>
+        <td>Видаляє продукт за індифікатором. Повертає статус повідомлення.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+
+</body></html>
