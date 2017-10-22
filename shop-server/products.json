@@ -1,16 +1,1 @@
-[
-  { 
-    "id": "1",
-    "title": "iPhone X",
-    "description": "Some text about iphone etc",
-    "price": "1200",
-    "image_src": "/images/iphone-x.png"
-  },
-  { 
-    "id": "2",
-    "title": "iPhone 8",
-    "description": "Some text about iphone blah",
-    "price": "800",
-    "image_src": "/images/iphone-8.png"
-  }
-]
+[{"id":"1","title":"iPhone X","description":"Some text about iphone etc","price":"1200","image_src":"/images/iphone-x.png"},{"id":"2","title":"iPhone 8","description":"Some text about iphone blah","price":"800","image_src":"/images/iphone-8.png"},{"title":"werwer","id":"SkYL779TZ"},{"title":"new one","id":"Hy0kBmqpb"}]

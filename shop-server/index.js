@@ -40,6 +40,7 @@ app.get('/api/products/:id', function (req, res) {
 
 app.post('/api/products', function (req, res) {
   var data = JSON.parse(fs.readFileSync('./products.json', 'utf8'));
+  console.log(req.body);
   var newProduct = JSON.parse(req.body.product);
   var randomId = shortid.generate();
 
