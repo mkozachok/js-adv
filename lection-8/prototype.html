@@ -1,0 +1,55 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Prototype</title>
+</head>
+
+<body>
+
+    <script>
+        function Animal() {
+            this.name = 'Animal';
+            this.toString = function () {
+                console.log('This is ' + this.name);
+            }
+        }
+
+        function Dog() {
+            this.name = 'Dog';
+        }
+
+        function Cat() {
+            this.name = 'Cat';
+        }
+
+        Dog.prototype = new Animal();
+        Dog.prototype.constructor = Dog;
+
+        Cat.prototype = new Animal();
+        Cat.prototype.constructor = Cat;
+
+
+        var Rex = new Dog();
+        var Anphisa = new Cat();
+
+        Rex.toString();
+        Anphisa.toString();
+
+        Animal.prototype.sound = "Grrr";
+        Animal.prototype.getSound = function () {
+            console.log(this.sound);
+        }
+
+
+        console.log(Dog.prototype);
+
+        Dog.getSound();
+        Cat.getSound();
+    </script>
+
+</body>
+
+</html>
